@@ -1,24 +1,20 @@
--- Define the NPCs
-local npc_lost_lover = CreateNPC("Sir Cedric", 12345, "Ironforge")
-local npc_beloved = CreateNPC("Lady Evelyne", 67890, "Stormwind")
-
--- Quest Initialization
-local quest_love_reunion = CreateQuest("Reuniting Lost Lovers", 54321)
-quest_love_reunion:SetDescription("Help Sir Cedric find his lost love, Lady Evelyne.")
-quest_love_reunion:SetObjective("Travel to Stormwind and deliver Cedric’s love letter to Evelyne.")
-
--- Quest Rewards
-quest_love_reunion:SetRewards({
-    {type = "title", name = "Champion of Love"},
-    {type = "item", name = "Heartbound Cloak"},
-    {type = "buff", name = "Love’s Blessing", duration = 3600}
-})
-
--- Quest Completion Logic
-function quest_love_reunion:OnComplete(player)
-    SendChatMessage(player, "Sir Cedric and Lady Evelyne embrace, thanking you for reuniting them!")
-    GiveReward(player, "Champion of Love")
+-- Utility function to create love quest
+function create_love_quest(npc1, npc2, quest_id, description, objective, rewards)
+    local quest = CreateQuest("Reuniting Lost Lovers", quest_id)
+    quest:SetDescription(description)
+    quest:SetObjective(objective)
+    quest:SetRewards(rewards)
+    return quest
 end
 
--- Register the quest
-RegisterQuest(quest_love_reunion)
+-- Use the utility function
+local quest_love_reunion = create_love_quest(
+    "Sir Cedric", "Lady Evelyne", 54321,
+    "Help Sir Cedric find his lost love, Lady Evelyne.",
+    "Travel to Stormwind and deliver Cedric’s love letter to Evelyne.",
+    {
+        {type = "title", name = "Champion of Love"},
+        {type = "item", name = "Heartbound Cloak"},
+        {type = "buff", name = "Love’s Blessing", duration = 3600}
+    }
+)
