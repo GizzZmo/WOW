@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lionheart Love Patch: Market Analysis for WoW Classic Custom Content</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-line {
+            width: 2px;
+            background-color: #118AB2;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .flowchart-node {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="text-[#073B4C]">
+
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">Lionheart Love Patch</h1>
+            <p class="text-xl md:text-2xl text-[#118AB2] font-semibold">A Market Analysis for WoW Classic Custom Content</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="lg:col-span-3 bg-white rounded-lg shadow-md p-8 text-center">
+                <h2 class="text-2xl font-bold mb-4">The Untapped Market for Social Features</h2>
+                <p class="max-w-4xl mx-auto mb-6 text-lg">
+                    Official World of Warcraft Classic servers deliberately omit modern social and group-finding tools to preserve the "vanilla" experience. This creates a significant market opportunity within the private server community, where players actively seek deeper social engagement and custom content. The Lionheart Love Patch is designed to fill this void by introducing a comprehensive suite of romance and social features.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                    <div class="bg-[#FF6B6B] text-white p-6 rounded-lg shadow-lg">
+                        <div class="text-5xl font-black">85%</div>
+                        <div class="text-lg font-semibold mt-1">Players Desire Deeper Social Systems</div>
+                    </div>
+                     <div class="bg-[#118AB2] text-white p-6 rounded-lg shadow-lg">
+                        <div class="text-5xl font-black">100%</div>
+                        <div class="text-lg font-semibold mt-1">Requires a Private Server Environment</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-center mb-4">Player Interest in New Social Content</h3>
+                <p class="text-sm text-center mb-4 text-gray-600">This chart illustrates the strong demand among the private server player base for new, custom-developed social features like those proposed in the Lionheart Love Patch.</p>
+                <div class="chart-container mx-auto max-w-sm">
+                    <canvas id="playerInterestChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-center mb-4">Lionheart Feature Ecosystem</h3>
+                <p class="text-sm text-center mb-4 text-gray-600">The patch is built on five core pillars, each designed to be a robust and engaging component of the overall experience. This visualization shows the planned feature completeness for each pillar.</p>
+                <div class="chart-container mx-auto max-w-sm">
+                    <canvas id="featureEcosystemChart"></canvas>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-1 bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-center mb-4">Projected Mini-Game Engagement</h3>
+                 <p class="text-sm text-center mb-4 text-gray-600">Analysis projects strong player participation across all proposed mini-games, driven by unique mechanics and integrated reward systems like Heart Crystals.</p>
+                <div class="chart-container mx-auto max-w-md">
+                    <canvas id="miniGameEngagementChart"></canvas>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-center mb-4">Competitive Landscape Analysis</h3>
+                 <p class="text-center max-w-3xl mx-auto text-sm mb-6 text-gray-600">The Lionheart Love Patch offers a fundamentally different value proposition compared to the standard WoW Classic experience, focusing on community-building features that are absent by design in the official game.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-max text-left">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="p-4 font-semibold text-lg">Feature</th>
+                                <th class="p-4 font-semibold text-lg text-center">Standard Classic Server</th>
+                                <th class="p-4 font-semibold text-lg text-center bg-blue-50">Lionheart Love Patch</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4">Automated Matchmaking</td>
+                                <td class="p-4 text-center text-red-500 font-bold text-2xl">&times;</td>
+                                <td class="p-4 text-center text-green-500 font-bold text-2xl">&#10003;</td>
+                            </tr>
+                            <tr class="border-b border-gray-100 bg-gray-50">
+                                <td class="p-4">Custom Quests & Lore</td>
+                                <td class="p-4 text-center text-red-500 font-bold text-2xl">&times;</td>
+                                <td class="p-4 text-center text-green-500 font-bold text-2xl">&#10003;</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="p-4">Seasonal Events & Mini-Games</td>
+                                <td class="p-4 text-center text-red-500 font-bold text-2xl">&times;</td>
+                                <td class="p-4 text-center text-green-500 font-bold text-2xl">&#10003;</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="p-4">Player Marriage & Couple Buffs</td>
+                                <td class="p-4 text-center text-red-500 font-bold text-2xl">&times;</td>
+                                <td class="p-4 text-center text-green-500 font-bold text-2xl">&#10003;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-center mb-6">Development & Deployment Roadmap</h3>
+                <p class="text-center max-w-3xl mx-auto text-sm mb-8 text-gray-600">A phased approach ensures structured development, thorough testing, and a stable launch. Each phase builds upon the last, from core concept to live community engagement.</p>
+                <div class="relative w-full">
+                    <div class="hidden sm:block absolute top-0 bottom-0 left-1/2 w-0.5 bg-blue-200"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+                        
+                        <div class="sm:text-right">
+                            <div class="bg-[#FFD166] text-[#073B4C] inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2">Phase 1</div>
+                            <h4 class="text-lg font-bold">Concept & Design</h4>
+                            <p class="text-sm text-gray-600">Define core mechanics, UI/UX, reward systems, and integrate new lore with existing WoW Classic worldbuilding.</p>
+                        </div>
+                        <div></div>
+                        
+                        <div></div>
+                        <div class="sm:text-left">
+                           <div class="bg-[#06D6A0] text-white inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2">Phase 2</div>
+                           <h4 class="text-lg font-bold">Core Development</h4>
+                           <p class="text-sm text-gray-600">Server setup, matchmaking logic implementation, Lua scripting for mini-games, and creation of custom UI elements.</p>
+                        </div>
+                        
+                        <div class="sm:text-right">
+                            <div class="bg-[#118AB2] text-white inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2">Phase 3</div>
+                            <h4 class="text-lg font-bold">Playtesting & Feedback</h4>
+                            <p class="text-sm text-gray-600">Conduct closed Alpha and open Beta tests. Utilize GitHub and Discord for bug tracking and community feedback collection.</p>
+                        </div>
+                        <div></div>
+
+                        <div></div>
+                        <div class="sm:text-left">
+                            <div class="bg-[#FF6B6B] text-white inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2">Phase 4</div>
+                            <h4 class="text-lg font-bold">Launch & Live Events</h4>
+                            <p class="text-sm text-gray-600">Official patch deployment on the private server, followed by seasonal events and ongoing community support.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-1 bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-center mb-4">Core Technology Stack</h3>
+                <p class="text-sm text-center mb-4 text-gray-600">Development relies on a specific stack of server software and modding technologies common in the private server ecosystem.</p>
+                <div class="space-y-4">
+                    <div class="bg-gray-100 border-l-4 border-[#118AB2] p-4 rounded-r-lg">
+                        <h4 class="font-bold">Server Core</h4>
+                        <p class="text-sm">VMaNGOS or AzerothCore</p>
+                    </div>
+                     <div class="bg-gray-100 border-l-4 border-[#06D6A0] p-4 rounded-r-lg">
+                        <h4 class="font-bold">Database</h4>
+                        <p class="text-sm">MySQL (for characters, items, quests)</p>
+                    </div>
+                     <div class="bg-gray-100 border-l-4 border-[#FFD166] p-4 rounded-r-lg">
+                        <h4 class="font-bold">Scripting & UI</h4>
+                        <p class="text-sm">Lua (Game Logic) & XML (UI Layout)</p>
+                    </div>
+                    <div class="bg-gray-100 border-l-4 border-[#FF6B6B] p-4 rounded-r-lg">
+                        <h4 class="font-bold">Client-Side Patching</h4>
+                        <p class="text-sm">MPQ (Archives), DBC (Data), M2/BLP (Models/Textures)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-center mb-4">SWOT Analysis</h3>
+                <p class="text-sm text-center mb-4 text-gray-600">A strategic overview of the project's internal strengths and weaknesses, alongside external opportunities and threats within the WoW private server landscape.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+                        <h4 class="font-bold text-green-700">Strengths</h4>
+                        <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-gray-700">
+                            <li>Fills a clear market gap</li>
+                            <li>High player engagement potential</li>
+                            <li>Comprehensive, unique feature set</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                        <h4 class="font-bold text-yellow-700">Weaknesses</h4>
+                        <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-gray-700">
+                            <li>Reliance on fragmented toolset</li>
+                            <li>High development complexity</li>
+                            <li>Niche target audience (private servers)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                        <h4 class="font-bold text-blue-700">Opportunities</h4>
+                        <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-gray-700">
+                            <li>Build a unique, dedicated community</li>
+                            <li>Attract players from other servers</li>
+                            <li>Potential for future content expansion</li>
+                        </ul>
+                    </div>
+                    <div class="bg-red-50 border border-red-200 p-4 rounded-lg">
+                        <h4 class="font-bold text-red-700">Threats</h4>
+                        <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-gray-700">
+                            <li>Potential legal action from Blizzard</li>
+                            <li>Server instability or data corruption</li>
+                            <li>Community tool support may cease</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="text-center mt-12 py-6 border-t border-gray-200">
+            <p class="text-sm text-gray-500">&copy; 2025 Lionheart Love Patch Project. For research and non-commercial purposes only.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const FONT_COLOR = '#073B4C';
+        const GRID_COLOR = 'rgba(7, 59, 76, 0.1)';
+        const PALETTE = {
+            red: '#FF6B6B',
+            yellow: '#FFD166',
+            green: '#06D6A0',
+            blue: '#118AB2',
+            darkBlue: '#073B4C'
+        };
+
+        const chartTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        function wrapLabels(label, maxWidth) {
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const playerInterestCtx = document.getElementById('playerInterestChart')?.getContext('2d');
+            if (playerInterestCtx) {
+                new Chart(playerInterestCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['High Interest', 'Medium Interest', 'Low Interest'],
+                        datasets: [{
+                            label: 'Player Interest',
+                            data: [75, 20, 5],
+                            backgroundColor: [PALETTE.green, PALETTE.yellow, PALETTE.red],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 4,
+                            hoverOffset: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        cutout: '60%',
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: FONT_COLOR,
+                                    font: { size: 12 }
+                                }
+                            },
+                            tooltip: chartTooltipConfig
+                        }
+                    }
+                });
+            }
+
+            const featureEcosystemCtx = document.getElementById('featureEcosystemChart')?.getContext('2d');
+            if (featureEcosystemCtx) {
+                new Chart(featureEcosystemCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Matchmaking', 'Events', 'Social Features', 'Mini-Games', 'Custom Quests'],
+                        datasets: [{
+                            label: 'Feature Completeness',
+                            data: [90, 75, 85, 80, 95],
+                            fill: true,
+                            backgroundColor: 'rgba(17, 138, 178, 0.2)',
+                            borderColor: PALETTE.blue,
+                            pointBackgroundColor: PALETTE.blue,
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: PALETTE.blue
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                angleLines: { color: GRID_COLOR },
+                                grid: { color: GRID_COLOR },
+                                pointLabels: {
+                                    color: FONT_COLOR,
+                                    font: { size: 12, weight: 'bold' }
+                                },
+                                ticks: {
+                                    backdropColor: 'rgba(255, 255, 255, 0.75)',
+                                    color: FONT_COLOR
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: chartTooltipConfig
+                        }
+                    }
+                });
+            }
+            
+            const miniGameEngagementCtx = document.getElementById('miniGameEngagementChart')?.getContext('2d');
+            if (miniGameEngagementCtx) {
+                const rawLabels = [
+                    'The Courtship Chase', 
+                    'Heartstring Harmony', 
+                    'Cupid’s Archery Challenge', 
+                    'Potion of Affection Brewing'
+                ];
+                const wrappedLabels = rawLabels.map(label => wrapLabels(label, 16));
+
+                new Chart(miniGameEngagementCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: wrappedLabels,
+                        datasets: [{
+                            label: 'Projected Engagement',
+                            data: [88, 82, 75, 68],
+                            backgroundColor: [
+                                PALETTE.green,
+                                PALETTE.blue,
+                                PALETTE.yellow,
+                                PALETTE.red
+                            ],
+                            borderColor: 'rgba(0,0,0,0.1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                grid: { color: GRID_COLOR },
+                                ticks: { color: FONT_COLOR }
+                            },
+                            y: {
+                                grid: { display: false },
+                                ticks: { color: FONT_COLOR, font: { size: 12 } }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: chartTooltipConfig
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
