@@ -80,7 +80,5 @@ Welcome to the **Lionheart Love Patch** development hub! Whether you're a **code
 ✅ **Solution:**  
 - Check official event start times  
 - Confirm game version compatibility with **Lionheart Love Patch**  
-
-## 🏆 **Next: [Useful Links & Resources](#resources.md)**  
-(External tutorials, references, and additional development support)  
+ 
 
