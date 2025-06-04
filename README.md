@@ -1,6 +1,3 @@
-Here is the **optimized, detailed README.md** for the **Lionheart Love Patch** GitHub repository. This version includes **a structured index, links to documentation, installation guides, and development collaboration details**. 🚀💖  
-
-```md
 # 💖 **Lionheart Love Patch for WoW Classic**  
 
 ## 🌟 **Overview**  
