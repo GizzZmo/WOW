@@ -40,7 +40,7 @@ Welcome to the **Lionheart Love Patch** development hub! Whether you're a **code
 - Submit **concept art** for love-themed events  
 - Follow **WoW Classic UI guidelines**  
 
-## 🏆 **Next: [Troubleshooting & Known Issues](#troubleshooting.md)**  
+## 🏆 **[Troubleshooting & Known Issues](#troubleshooting.md)**  
 (Find solutions for matchmaking UI glitches, performance drops, and common bugs)  
 ```
 
