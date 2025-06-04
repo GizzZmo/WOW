@@ -118,7 +118,4 @@ We welcome **developers, artists, writers, and testers** to help improve the Lov
 
 ```  
 
----
-
-Would you like me to **expand the development documentation** or create **more Lua scripts for matchmaking mechanics**? 🚀💖  
-Also, do you need a **Discord event announcement** for a playtesting session? 😊✨  
+😊✨  
