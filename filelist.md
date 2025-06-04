@@ -1,61 +1,90 @@
-# Lionheart Love Patch Repository
+Here’s the **GitHub file list in Markdown format** for organizing the **Lionheart Love Patch** project:
 
-## 📂 Project Structure
+```md
+# 📂 Lionheart Love Patch Repository
+
+## 📜 Project Structure
 
 ### 🔹 **Main Folders**
-- `/code/` → Lua scripts for quests, matchmaking mechanics, and seasonal events.
-- `/assets/` → Textures, icons, UI changes, and Love Patch-themed models.
-- `/docs/` → Patch notes, development guidelines, changelogs, and community feedback.
-- `/testing/` → Playtesting reports, bug tracking, and balancing adjustments.
+- `/code/` → Lua scripts for matchmaking mechanics, quests, and seasonal events.
+- `/assets/` → UI icons, textures, models, and Love Patch-themed items.
+- `/docs/` → Development guidelines, patch notes, changelogs, and community feedback.
+- `/testing/` → Playtesting reports, bug tracking, balancing adjustments.
 
 ### 🔹 **Files Overview**
-#### **📜 Quest Scripts**
+#### **📝 Matchmaking System**
+- `/code/Soulmate_Bonding.lua` → Mechanic for pairing players into soulmate teams.
+- `/code/Eternal_Bonds.lua` → Buffs and effects for bonded partners.
+- `/code/Matchmaking_UI.lua` → Love-themed matchmaking profile and leaderboard.
+
+#### **🎭 Quests & Events**
 - `/code/Reuniting_Lost_Lovers.lua` → Love-themed quest about recovering stolen letters.
-- `/code/The_Heart_of_Eternity.lua` → Mythical love relic quest with special effects.
-- `/code/Destiny's_Trial.lua` → Advanced matchmaking system with unique trials.
-- `/code/Soulmate_Bonding_Ritual.lua` → Pair players for cooperative buffs and rewards.
+- `/code/The_Heart_of_Eternity.lua` → Mythical love relic quest with enchantments.
+- `/code/Destiny's_Trial.lua` → Soulmate trials with unique matchmaking rewards.
+- `/code/Love_Dungeon.lua` → PvE matchmaking dungeon with cooperative bosses.
 
-#### **🛠 Matchmaking Mechanics**
-- `/code/Soulbound_Connection.lua` → Forms Soulmate pairs with custom buffs.
-- `/code/Eternal_Love_Blessing.lua` → Creates seasonal festival buffs for matched players.
-- `/code/Love_Duel_Arena.lua` → PvP system where players fight for Love’s Honor.
+#### **⚔ PvP Duels & Tournament**
+- `/code/Heartbound_Arena.lua` → PvP matchmaking duels for Love’s Honor.
+- `/code/Cupid_Duel.lua` → Special event where players battle using Cupid’s Arrows.
+- `/code/Heartbound_Tournament.lua` → Ranked matchmaking PvP tournament.
 
-#### **🎨 Assets & UI Changes**
-- `/assets/Heartbound_Cloak.png` → Special glowing red cloak texture.
+#### **🎮 Mini-Games & Interactive Challenges**
+- `/code/Cupid_Archery.lua` → Target practice mini-game.
+- `/code/Love_Labyrinth.lua` → Maze puzzle for matchmaking partners.
+- `/code/Dungeon_Matchmaking.lua` → Multiplayer matchmaking dungeon adventure.
+
+#### **🎨 Assets & UI Enhancements**
+- `/assets/Heartbound_Cloak.png` → Special animated glowing cloak.
 - `/assets/Lover's_Lantern.png` → UI icons and toy assets.
 - `/assets/Mini_Cupid_Pet.png` → Love-themed pet model and animations.
 
-#### **📢 Patch Notes & Development**
-- `/docs/README.md` → Introduction to the Lionheart Love Patch.
-- `/docs/objectives.md` → Development roadmap and feature goals.
+#### **📢 Development & Patch Notes**
+- `/docs/README.md` → Overview of the Lionheart Love Patch.
 - `/docs/matchmaking_system.md` → Design details for matchmaking mechanics.
 - `/docs/expanded_quests.md` → In-depth descriptions for all romantic adventure quests.
+- `/docs/playtesting_feedback.md` → Bug reports, balancing improvements, and player insights.
 
 ---
 
-### **📜 More Lua Scripts for Love-Themed Mechanics**
-Here are **expanded matchmaking mechanics, PvP events, and seasonal festival scripts** for the Love Patch.
+Now, here are **additional Lua scripts for matchmaking and love-themed rewards**:
 
-#### **📜 Lua Script: Eternal Love Festival Buffs**
+---
+
+### **💖 Lua Script: Soulmate’s Destiny Trial**
 ```lua
--- Define Seasonal Event NPC
-local npc_love_festival = CreateNPC("Elyndra, Keeper of Love", 777888, "Stormwind")
+-- Define NPC
+local npc_love_spirit = CreateNPC("Elyndra, Keeper of Destiny", 112233, "Moonglade")
 
--- Love Festival Buff Quest
-local quest_love_festival = CreateQuest("Eternal Love Festival", 999222)
-quest_love_festival:SetDescription("Celebrate love in Azeroth and receive a special blessing.")
-quest_love_festival:SetObjective("Participate in festival events and receive the Eternal Love Blessing.")
+-- Soulmate Destiny Trial Quest
+local quest_destiny_trial = CreateQuest("Soulmate’s Destiny Trial", 445566)
+quest_destiny_trial:SetDescription("Complete the trials of love and prove your eternal bond.")
+quest_destiny_trial:SetObjective("Work together to overcome challenges and unlock your destiny.")
 
--- Apply Festival Buff
-function quest_love_festival:OnFestivalStart(player)
-    SendChatMessage(player, "Elyndra whispers: 'The festival begins! Love’s magic fills the air.'")
-    ApplyBuff(player, "Eternal Love Blessing", 10800)
+-- Trial of Memory
+function quest_destiny_trial:OnMemoryPuzzle(player1, player2)
+    SendChatMessage(player1, "Elyndra whispers: 'Remember your journey together. Only truth will open the path.'")
+    SendChatMessage(player2, "Elyndra whispers: 'Trust in your shared memories and guide each other forward.'")
 end
 
-function quest_love_festival:OnComplete(player)
-    SendChatMessage(player, "Elyndra smiles: 'You carry love’s essence. May your heart guide you forever.'")
-    GiveReward(player, "Lover’s Lantern")
+-- Trial of Unity
+function quest_destiny_trial:OnGuardianBattle(player1, player2, guardian)
+    SendChatMessage(player1, "The Guardian of Love challenges you! Fight as one!")
+    SendChatMessage(player2, "The Guardian of Love prepares an attack. Synchronize your strikes!")
+    StartCombat(player1, guardian)
+    StartCombat(player2, guardian)
+end
+
+-- Trial of Fate
+function quest_destiny_trial:OnFinalChoice(player1, player2)
+    SendChatMessage(player1, "Elyndra smiles: 'Your choices have shaped destiny itself.'")
+    SendChatMessage(player2, "Elyndra smiles: 'Let your hearts guide the path ahead.'")
+    GiveReward(player1, "Destiny’s Embrace Cloak")
+    GiveReward(player2, "Destiny’s Embrace Cloak")
 end
 
 -- Register the quest
-RegisterQuest(quest_love_festival)
+RegisterQuest(quest_destiny_trial)
+```
+
+Would you like **even more Lua scripts** to **expand matchmaking buffs, PvP events, and seasonal mechanics**? 😊🚀  
+Also, do you need **help organizing a playtesting roadmap** to track tester feedback? 💖✨
