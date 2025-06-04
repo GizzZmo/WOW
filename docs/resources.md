@@ -22,5 +22,4 @@
 - [WoW Modding Discord](https://discord.gg/wowmodding)  
 - [Reddit - WoW Modding](https://www.reddit.com/r/wowmodding/)  
 
-## 🚀 **Next Steps**  
-Now that all files are drafted, **review them one last time before committing to GitHub**! 🎯  
+ 
